@@ -1,0 +1,680 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(180, 178, 178);
+}
+
+.navbar {
+    position: fixed;
+    background-color: #252525;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+    transition: .4s linear;
+}
+
+.content {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 300px;
+    height: 80px;
+    background-image: url(../img/logo_horizont.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-toggler{
+    background: transparent;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    z-index: 990;
+    display: none; 
+}
+
+.menu-toggler span{
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    margin: 7px 0;
+    position: relative;
+    transition: .2s linear;
+}
+
+.navbar-menu a {
+    margin-left: 40px;
+    font-size: 1.2rem;
+    color: white;
+    transition: .2s linear;
+    
+}
+
+.navbar-menu a:hover {
+    color: #3EFFFF;
+}
+
+/* sticky menu*/
+
+
+.sticky {
+    background-color: white;
+}
+
+.sticky .logo {
+    background-image: url(../img/logo_horizont_white.png);
+}
+
+.sticky .navbar-menu a{
+    color: black;
+}
+
+.sticky .navbar-menu a:hover {
+    color: #3EFFFF;
+}
+
+.sticky .menu-toggler span {
+    background-color: rgb(14, 14, 14);
+    transition: .2s linear;
+}
+
+/* HOME SECTION*/
+
+#home {
+    height: 100vh;
+    min-height: 500px;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+#home .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#home .homeContent{
+    width: 100%;
+    color: white;
+}
+
+#home .homeLogo img {    
+    width: 65%;
+    height: auto;
+    margin-bottom: 3em;
+    margin-top: 5em;
+    min-width: 350px;
+  }
+
+.homeSlogan {
+    font-size: 1.5rem;
+}
+
+.homeSlogan::before {
+    content: '';
+}
+
+.homeSlogan::after {
+    content: 'TWOJEGO SAMOCHODU';
+    color: #27E6F4;
+    display: block;
+}
+
+
+.seeMore {
+    background-color: #252525;
+    padding: 0.8rem;
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+    border: 2px solid #27E6F4;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 250px;
+    cursor: pointer;
+}
+
+.seeMore a {
+    text-decoration: none;
+    color: white;
+}
+
+
+section {
+    padding: 100px 0;
+    background-color: #252525;
+}
+
+
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    color: #27E6F4;
+    z-index: 0;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.sectionTitle::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    bottom: -10px;
+    z-index: -1;
+    left: calc(50% - 75px);
+}
+
+.sectionTitle::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #27E6F4;
+    bottom: -15px;
+    z-index: -1;
+    left: calc(50% - 10px);
+    border: solid 3px #252525;
+}
+
+.servicesContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service {
+    transition: 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 290px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 25px;
+    border: solid 2px #27E6F4;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.servicePhoto {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+}
+
+.servicePhoto img {
+    width: 100%;
+    height:100% ;
+    border-radius: 25px;
+    object-fit: cover;
+
+}
+
+.serviceTitle {
+    padding: 1rem;
+    z-index: 0;
+
+}
+
+.item img{
+    height: 500px;
+    object-fit: cover;
+}
+
+.service .serviceInfo {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    opacity: 0;
+    z-index: 0;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px #7a7a7a;
+
+}
+
+.service::before {
+    content: "";
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    border-radius: 25px;
+    z-index: 1;
+    background-color: #27E6F4 ;
+    transition: .2s linear;
+    opacity:0;
+    transform: scale(1);
+
+}
+
+.service:hover::before
+ {
+    opacity: 65%;
+    transform: scale(1);
+}
+
+.service:hover .serviceInfo,
+.serviceTitle {
+    opacity: 1;
+    z-index: 2;
+    transition: .5s ease-in;
+
+}
+
+
+.oNasContent {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.Firma {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5rem;
+
+}
+
+.Firma .firmaLogo {
+    width: 50%;
+    padding: 5px;
+}
+
+.Firma .firmaOpis {
+    width: 50%;
+    color: white;
+    font-size: 1rem;
+    text-align: justify;
+    padding: 0 2rem;
+}
+
+.firmaLogo img {
+    width: 100%;
+    height:100% ;
+    object-fit: contain;
+}
+
+.oNasWyniki {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+.wynik {
+    width: 33%;
+    background-color: #27E6F4;
+    margin: 5px;
+    border-radius: 15px;
+    color: white;
+    padding: 2rem;
+    font-size: 1.2rem;
+
+}
+
+.white {
+    background-color: white;
+    color: #27E6F4;
+}
+
+.number {
+    font-size: 3rem;
+    
+}
+
+.item img {
+    border-radius: 15px;
+    border: 2px solid #27E6F4;
+}
+
+.kontaktContetn {
+    width: 100%;
+}
+
+.kontaktInfos {
+    display: flex;
+    justify-content: center;
+}
+
+
+.kontaktInfos .kontakt {
+    width: 32%;
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    justify-content: center;
+    transition: .3s linear;
+    border: solid 5px #3EFFFF;
+    
+}
+
+.kontaktInfos {
+    width: 100%;
+    display:flex;
+}
+
+.kontakt i {
+    font-size: 3rem;
+    color: #3EFFFF;
+    padding-bottom: 1rem;
+}
+
+.kontakt:hover {
+    transform: scale(110%);
+    font-size: larger;
+    
+}
+
+.formularzInfo {
+    margin-top: 10rem;
+    text-align: center;
+    color:#3EFFFF;
+}
+
+
+.formularz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    
+}
+
+
+.formularz input, .formularz textarea {
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    color: #3EFFFF;
+}
+
+.formularzImie, .formularzMail {
+    max-width: calc(50% - 10px);
+
+}
+
+.formularzText {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.formularz p {
+    color: white;
+    float: left;
+}
+
+.formularz .btn {
+    width: 200px;
+    background-color: transparent;
+    color: #3EFFFF;
+    font-size: 1.3rem;
+    border: 2px solid #3EFFFF;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s linear;
+    margin-top: 20px;
+    float: right;
+
+}
+
+.formularz .btn:hover {
+    background-color: #3EFFFF;
+    color: white;
+}
+
+input:focus, textarea:focus {
+    border: 3px solid #3EFFFF;
+  }
+
+.footerItems {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+}
+
+.footerCompany {
+    display: inline-flex;
+
+}
+
+.footerLogo img{
+    width: 200px;
+
+}
+
+.footerCompanyInfo p {
+    width: 150px;
+    color: white;
+    padding-left: 1rem;
+    text-shadow: 1px 2px #8d8d8d;
+}
+
+.footerSM {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
+
+}
+
+.footerSM a:hover {
+    color: #3EFFFF;
+}
+
+.footerSM a {
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: .2s linear;
+
+}
+
+.footerSM p {
+    font-size: 1rem;
+    display: inline;
+    text-shadow: 1px 2px #8d8d8d;
+    margin-left: 10px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.copyright img {
+    width: 100px;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+
+
+@media (max-width: 980px) {
+    .menu-toggler {
+        display: block;
+        margin-right: 0.5rem;
+
+    }
+
+    .logo{
+        width: 220px;
+        height: 50px
+    }
+
+    .navbar-menu{
+        position:fixed;
+        height: 100vh;
+        max-height:800px;
+        width: 100%;
+        background-color: #252525;
+        top: 0;
+        right: -100%;
+        max-width:300px;
+        padding: 80px 30px;
+        transition: .3s linear;
+         
+    }
+
+    .navbar-menu a {
+        display: block;
+        font-size: 30px;
+        margin: 15px;
+    }
+
+    .sticky .navbar-menu a:hover {
+        color: #27E6F4;
+    }
+
+    .sticky .navbar-menu{
+        background-color: white;
+    }
+
+    .navbar-menu.active{
+        right: 0;
+    }
+
+    .menu-toggler.active span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 5px;
+    }
+
+    
+    .menu-toggler.active span:nth-child(2){
+        opacity:0;
+    }
+
+    .menu-toggler.active span:nth-child(3){
+        transform: rotate(45deg);
+        bottom: 15px;
+    }
+
+    .servicesContent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Firma {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Firma .firmaLogo {
+        width: 100%;
+    }
+    .Firma .firmaOpis {
+        width: 100%;
+    }
+
+    .kontaktInfos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kontaktInfos .kontakt {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .formularzImie, .formularzMail {
+        max-width: 100%;
+    
+    }
+
+
+
+}
+
+
+@media (max-width: 710px) {
+    .footerItems {
+        display: flex;
+        flex-direction: column;
+       
+    
+    }
+
+    .footerCompany {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .footerSM {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .footerSM a {
+        padding-left: 20px;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    
+    .oNasWyniki {
+        flex-wrap: wrap;
+    }
+
+    .wynik {
+        width: 100%;
+    }
+
+    .footerSM {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .footerSM a {
+        justify-content: center;
+    }
+
+}
+
+
+        
